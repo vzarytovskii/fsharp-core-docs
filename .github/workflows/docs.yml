@@ -44,7 +44,7 @@ jobs:
       - name: Restore projects
         run: dotnet restore FSharp.Core/FSharp.Core.fsproj
       - name: Build FSharp.Core in fsharp main
-        run: dotnet build /src/FSharp.Core/FSharp.Core.fsproj
+        run: dotnet build FSharp.Core/FSharp.Core.fsproj
         working-directory: ${{ env.FSHARP_DIR }}
       - name: Build FSharp.Formatting main
         run: ./build -t Build
