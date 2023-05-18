@@ -39,12 +39,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           global-json-file: ${{ env.FSF_DIR }}/global.json
-      - name: Restore tools
-        run: dotnet tool restore
-      - name: Restore projects
-        run: dotnet restore FSharp.Core/FSharp.Core.fsproj
       - name: Build FSharp.Core in fsharp main
-        run: dotnet build FSharp.Core/FSharp.Core.fsproj
+        run: dotnet build --restore src/FSharp.Core/FSharp.Core.fsproj
         working-directory: ${{ env.FSHARP_DIR }}
       - name: Build FSharp.Formatting main
         run: ./build -t Build
