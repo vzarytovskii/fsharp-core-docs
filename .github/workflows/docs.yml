@@ -43,7 +43,7 @@ jobs:
         run: dotnet build --restore src/FSharp.Core/FSharp.Core.fsproj
         working-directory: ${{ env.FSHARP_DIR }}
       - name: Build FSharp.Formatting main
-        run: ./build -t Build
+        run: dotnet fsi ./build.fsx -t Build
         working-directory: ${{ env.FSF_DIR }}
       - name: Run fsdocs
         run: dotnet FSharp.Formatting/src/fsdocs-tool/bin/Release/net6.0/fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
